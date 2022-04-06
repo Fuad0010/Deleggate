@@ -38,26 +38,70 @@ namespace Deleggate
                 numbers.Add(4);
                 numbers.Add(23);
                 numbers.Add(42);
-
                 int num = numbers.Find(n => n > 2);
-                //Console.WriteLine(num);
                 List<int> nums = numbers.FindAll(n => n > 2);
-                foreach(var item in nums)
+                foreach (var item in nums)
                 {
                     Console.WriteLine(item);
                 }
-
             }
 
+            Console.WriteLine(IsOdd(new int[] { 2, 4, 3, 6, 7 }));
+            Console.WriteLine(IsEven(new int[] { 2, 4, 3, 6, 7 }));
+            Console.WriteLine(IsBigTwo(new int[] { 2, 4, 3, 6, 7 }));
+        }
+
+        static bool CheckIsOdd(int num)
+        {
+            return num % 2 == 1;
+        }
+        static bool CheckIsEven(int num)
+        {
+            return num % 2 == 0;
+        }
+        static bool CheckBigTwo(int num)
+        {
+            return num > 2;
+        }
+        static int IsEven(int[] arr)
+        {
+            int result = 0;
+            foreach (var item in arr)
+            {
+                if (CheckIsEven(item))
+                {
+                    result += item;
+                }
+            }
+            return result;
 
 
+        }
+        static int IsOdd(int[] arr)
+        {
+            int result = 0;
+            foreach (var item in arr)
+            {
+                if (CheckIsOdd(item))
+                {
+                    result += item;
+                }
+            }
+            return result;
 
 
-
-
-
-
-
+        }
+        static int IsBigTwo(int[] arr)
+        {
+            int result = 0;
+            foreach (var item in arr)
+            {
+                if (CheckBigTwo(item))
+                {
+                    result += item;
+                }
+            }
+            return result;
 
 
         }
